@@ -54,11 +54,6 @@ if ($result && $result['nombre_votes'] > 0) {
                     <h3 class="candidate-name">Candidat 1</h3>
                     <p class="candidate-details">2ème année</p>
                     <button class="vote-button" value="Candidat 1" >Voter pour ce candidat</button>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -68,11 +63,7 @@ if ($result && $result['nombre_votes'] > 0) {
                     <h3 class="candidate-name">Candidat 2</h3>
                     <p class="candidate-details">3ème année</p>
                     <button class="vote-button" value="Candidat 2">Voter pour ce candidat</button>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
 
@@ -82,11 +73,6 @@ if ($result && $result['nombre_votes'] > 0) {
                     <h3 class="candidate-name">Candidat 3</h3>
                     <p class="candidate-details">1ère année</p>
                     <button class="vote-button" value="Candidat 3">Voter pour ce candidat</button>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
