@@ -11,17 +11,15 @@ body {
 }
 
 .header {
-  background-color: #FF8C00;
+  background-color: #d73b00;
   color: white;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+ float: left;
+ margin: 5px;
 }
 
 .container {
@@ -32,8 +30,8 @@ body {
 
 .candidates-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16rem;
   margin-bottom: 2rem;
 }
 
@@ -43,8 +41,6 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 .candidate-card:hover {
@@ -65,7 +61,7 @@ body {
 
 .candidate-name {
   font-size: 1.2rem;
-  color: #FF8C00;
+  color: #d73b00;
   margin-bottom: 0.5rem;
 }
 
@@ -77,19 +73,19 @@ body {
 
 .vote-button {
   background-color: white;
-  border: 2px solid #FF8C00;
+  border: 2px solid #d73b00;
   border-radius: 8px;
   padding: 1rem;
   margin: 0 1rem 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #FF8C00;
+  color: #d73b00;
   font-size: 1.1rem;
   width: calc(100% - 2rem);
 }
 
 .vote-button:hover {
-  background-color: #FF8C00;
+  background-color: #d73b00;
   color: white;
 }
 
@@ -100,45 +96,11 @@ body {
   cursor: not-allowed;
 }
 
-.progress-container {
-  padding: 1rem;
-  display: none;
-}
 
-.progress-bar {
-  background-color: #f1f1f1;
-  border-radius: 20px;
-  height: 20px;
-  margin-top: 0.5rem;
-  overflow: hidden;
-}
-
-.progress {
-  background-color: #FF8C00;
-  height: 100%;
-  width: 0%;
-  transition: width 0.5s ease-in-out;
-}
-
-.thank-you {
-  text-align: center;
-  color: #FF8C00;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  display: none;
-}
-
-.school-info {
-  text-align: center;
-  padding: 1rem;
-  background-color: #f8f8f8;
-  margin-top: 2rem;
-  border-radius: 10px;
-}
 
 @media (max-width: 768px) {
   .candidates-grid {
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 2rem;
   }
 }

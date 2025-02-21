@@ -10,7 +10,6 @@ if (!isset($_SESSION['identifiant'])) {
 $identifiant = $_SESSION['identifiant'];
 
 try {
-    // Connexion à la base de données
     $clspit = new PDO("mysql:host=localhost;dbname=wh100255_users;charset=utf8", 'wh100255_users', 'JnBWzvKMydIy');
     $clspit->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -30,62 +29,78 @@ if ($result && $result['nombre_votes'] > 0) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESMA - Système de Vote</title>
+    <title>Vote - ESMA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">ESMA</div>
-        <h1>Élection des Représentants Étudiants</h1>
-        <p>Choisissez votre représentant</p>
+
+   <header class="header">
+        <div class="logo">
+            <img src="téléchargement.png" alt="Logo-Esma" style="width: 100px;">
+       </div>
+       <center>
+
+           <h1>Élection des Représentants Étudiants</h1>
+           <p>Choisissez votre représentant</p>
+       </center>
     </header>
 
-    <div class="container">
-        <div class="candidates-grid">
-            <div class="candidate-card">
-                <img src="/api/placeholder/300/300" alt="Candidat 1" class="candidate-photo">
-                <div class="candidate-info">
-                    <h3 class="candidate-name">Candidat 1</h3>
-                    <p class="candidate-details">2ème année</p>
-                    <button class="vote-button" value="Candidat 1" >Voter pour ce candidat</button>
-                </div>
-            </div>
 
-            <div class="candidate-card">
-                <img src="/api/placeholder/300/300" alt="Candidat 2" class="candidate-photo">
-                <div class="candidate-info">
-                    <h3 class="candidate-name">Candidat 2</h3>
-                    <p class="candidate-details">3ème année</p>
-                    <button class="vote-button" value="Candidat 2">Voter pour ce candidat</button>
-                   
-                </div>
-            </div>
+<div class="container">
+    <h2>Votez pour un Candidat</h2>
 
-            <div class="candidate-card">
-                <img src="/api/placeholder/300/300" alt="Candidat 3" class="candidate-photo">
-                <div class="candidate-info">
-                    <h3 class="candidate-name">Candidat 3</h3>
-                    <p class="candidate-details">1ère année</p>
-                    <button class="vote-button" value="Candidat 3">Voter pour ce candidat</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="thank-you">
-            Merci d'avoir participé à l'élection des représentants ESMA !
-        </div>
-
-        <div class="school-info">
-            <p>ESMA - École Specialite de Multi-Media </p>
+    
+    <div class="candidates-grid">
+        <form action="index3.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
+            
+            
+                
+    <div class="candidate-card" style="margin: 15px;">
+                    <img src="candidat1.jpg" alt="Candidat 1" class="candidate-photo">
+                    <div class="candidate-info">
+                        <h3 class="candidate-name">Candidat 1</h3>
+            <p class="candidate-details">2ème année</p>
+            <button type="submit" class="vote-button" name="candidat" value="Candidat 1">Voter pour ce candidat</button>
         </div>
     </div>
+    
+    
+    <div class="candidate-card" style="margin: 15px;">
+        <img src="candidat2.jpg" alt="Candidat 2" class="candidate-photo">
+        <div class="candidate-info">
+            <h3 class="candidate-name">Candidat 2</h3>
+            <p class="candidate-details">3ème année</p>
+            <button type="submit" class="vote-button" name="candidat" value="Candidat 2">Voter pour ce candidat</button>
+        </div>
+    </div>
+    
 
-    <script src="script.js"></script>
+    
+    <div class="candidate-card" style="margin: 15px;">
+        <img src="candidat3.jpg" alt="Candidat 3" class="candidate-photo">
+        <div class="candidate-info">
+            <h3 class="candidate-name">Candidat 3</h3>
+            <p class="candidate-details">1ère année</p>
+            <button type="submit" class="vote-button" name="candidat" value="Candidat 3">Voter pour ce candidat</button>
+        </div>
+    </div>
+    
+    </form>
+</div>
+
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
