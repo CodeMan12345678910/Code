@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['candidat'])) {
 
     if ($result && $result['nombre_votes'] > 0) {
         $_SESSION['message'] = "Vous avez déjà voté.";
-        header("Location: index.php");
+        header("Location: index4.php");
         exit();
     }
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['candidat'])) {
     $stmt_vote->execute([':identifiant' => $identifiant, ':candidat' => $candidat]);
 
     $_SESSION['message'] = "Votre vote pour $candidat a été enregistré.";
-    header("Location: index.php");
+    header("Location: index4.php");
     exit();
 }
 ?>
