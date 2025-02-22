@@ -62,8 +62,6 @@ foreach ($votes as $vote) {
 
 
 
-
-
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner-border text-danger" role="status">
@@ -121,15 +119,20 @@ foreach ($votes as $vote) {
     </div>
 
 
+<script>
 
-   <script>
-        window.onload = function () {
-            setTimeout(function () {
-                document.getElementById("preloader").style.display = "none";
-                document.getElementById("content").style.display = "block";
-            }, 3000);
-        };
-    </script>
+    window.onload = function () {
+     setTimeout(function () {
+         document.getElementById("preloader").style.display = "none";
+     }, 3000);
+ };
+ 
+ setTimeout(function () {
+     window.location.href = "index.php"; // Remplace par ta page de destination
+ }, 10000);
+
+</script>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
