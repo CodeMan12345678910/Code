@@ -22,6 +22,20 @@ session_start();
     </div>
   </div>
 
+
+
+
+    <!-- Contenu principal -->
+    <div id="content">
+        <header class="header text-center py-4">
+            <img src="téléchargement.png" alt="Logo-Esma" style="width: 100px;">
+            <h1>Bienvenue sur le site officiel de vote</h1>
+            <p>Choisissez votre représentant</p>
+        </header>
+
+
+
+
   <!-- Contenu principal -->
   <div id="content">
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
@@ -57,6 +71,15 @@ session_start();
       </div>
     </div>
   </div>
+
+<center>
+
+  <footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+</center>
+
+
+
+
 
   <script>
     // Attendre 3 secondes avant d'afficher le contenu

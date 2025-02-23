@@ -119,6 +119,11 @@ foreach ($votes as $vote) {
     </div>
 
 
+<center>
+<footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+</center>
+
+
 <script>
 
     window.onload = function () {

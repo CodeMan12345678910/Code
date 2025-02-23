@@ -112,6 +112,15 @@ if ($result && $result['nombre_votes'] > 0) {
         </div>
     </div>
 
+
+
+<center>
+<footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+</center>
+
+
+
+
     <script>
         window.onload = function () {
             setTimeout(function () {
