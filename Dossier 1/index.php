@@ -34,18 +34,20 @@ session_start();
             <p>Choisissez votre représentant</p>
         </header>
 
-
+        <center>
+          <h1 class="mt-3">Photo des candidats</h1>
+        </center>
 
         <div id="carouselExampleControlsNoTouching" class="carousel slide mt-5" data-bs-touch="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="téléchargement.png" class="d-block w-25" alt="Photo-candidat1-esma" height="500px">
+      <img src="téléchargement.png" class="d-block w-75" alt="Photo-candidat1-esma" height="500px">
     </div>
     <div class="carousel-item">
-      <img src="téléchargement.png" class="d-block w-25" alt="Photo-candidat2-esma" height="500px">
+      <img src="téléchargement.png" class="d-block w-75" alt="Photo-candidat2-esma" height="500px">
     </div>
     <div class="carousel-item">
-      <img src="téléchargement.png" class="d-block w-25" alt="Photo-candidat3-esma" height="500px">
+      <img src="téléchargement.png" class="d-block w-75" alt="Photo-candidat3-esma" height="500px">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
@@ -74,12 +76,14 @@ session_start();
           </p>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-          <?php
-          if (isset($_SESSION['message'])) {
-            echo '<div class="message ' . (strpos($_SESSION['message'], 'Merci') !== false ? 'success' : 'error') . '">' . $_SESSION['message'] . '</div>';
-            unset($_SESSION['message']);
-          }
-          ?>
+        <?php
+if (isset($_SESSION['message'])) {
+  $isSuccess = strpos($_SESSION['message'], 'Merci') !== false; // Vérifie si "Merci" est dans le message
+  echo '<div class="message ' . ($isSuccess ? 'success' : 'error') . '">' . $_SESSION['message'] . '</div>';
+  unset($_SESSION['message']);
+}
+?>
+
           <form action="index-v.php" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="id" name="id" placeholder="Entrer votre matricule" required>

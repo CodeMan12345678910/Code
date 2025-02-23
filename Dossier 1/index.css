@@ -52,38 +52,26 @@
 
         /* Deuxième animation*/
 
-        .ml1 {
-            font-weight: 900;
-            font-size: 3.5em;
+
+        .message {
+          padding: 10px;
+          border-radius: 5px;
+          font-weight: bold;
+          text-align: center;
+          width: 50%;
+          margin: 10px auto;
         }
-        
-        .ml1 .letter {
-            display: inline-block;
-            line-height: 1em;
+      
+        .success {
+          background-color: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
         }
-        
-        .ml1 .text-wrapper {
-            position: relative;
-            display: inline-block;
-            padding-top: 0.1em;
-            padding-right: 0.05em;
-            padding-bottom: 0.15em;
+      
+        .error {
+          background-color: #f8d7da;
+          color: #721c24;
+          border: 1px solid #f5c6cb;
         }
-        
-        .ml1 .line {
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            height: 3px;
-            width: 100%;
-            background-color: #fff;
-            transform-origin: 0 0;
-        }
-        
-        .ml1 .line1 {
-            top: 0;
-        }
-        
-        .ml1 .line2 {
-            bottom: 0;
-        }
+  
+      
