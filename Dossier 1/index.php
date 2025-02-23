@@ -11,6 +11,7 @@ session_start();
   <title>Connexion - Vote</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -26,12 +27,36 @@ session_start();
 
 
     <!-- Contenu principal -->
-    <div id="content">
-        <header class="header text-center py-4">
+    <div id="content-1">
+        <header class="header  py-4">
             <img src="téléchargement.png" alt="Logo-Esma" style="width: 100px;">
             <h1>Bienvenue sur le site officiel de vote</h1>
             <p>Choisissez votre représentant</p>
         </header>
+
+
+
+        <div id="carouselExampleControlsNoTouching" class="carousel slide mt-5" data-bs-touch="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="téléchargement.png" class="d-block w-25" alt="Photo-candidat1-esma" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="téléchargement.png" class="d-block w-25" alt="Photo-candidat2-esma" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="téléchargement.png" class="d-block w-25" alt="Photo-candidat3-esma" height="500px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Précédant</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Suivant</span>
+  </button>
+</div>
 
 
 
@@ -71,16 +96,11 @@ session_start();
       </div>
     </div>
   </div>
+  
+  
 
-<center>
-
-  <footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
-</center>
-
-
-
-
-
+  
+  
   <script>
     // Attendre 3 secondes avant d'afficher le contenu
     window.onload = function () {
@@ -91,7 +111,14 @@ session_start();
     };
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+<center>
+  <footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+</center>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
