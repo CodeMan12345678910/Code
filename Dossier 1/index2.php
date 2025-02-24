@@ -73,38 +73,38 @@ if ($result && $result['nombre_votes'] > 0) {
         </header>
 
         <div class="container mt-4">
-            <h2 class="text-center">Votez pour un Candidat</h2>
+            <h2 class="text-center"> Chaque vote compte. Faites entendre votre voix et participez activement à l’avenir de votre établissement.</h2>
             <div class="row justify-content-center">
                 <form action="index3.php" method="POST" class="d-flex flex-wrap justify-content-center">
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
 
                     <div class="card m-3" style="width: 18rem;">
-                        <img src="candidat1.jpg" class="card-img-top" alt="Candidat 1">
+                        <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 1">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Candidat 1</h5>
-                            <p class="card-text">2ème année</p>
+                            <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
+                            <p class="card-text">Communication visuelle 1</p>
                             <button type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 1">Voter</button>
+                                value="Candidat 1">Votez ce candidat</button>
                         </div>
                     </div>
 
                     <div class="card m-3" style="width: 18rem;">
-                        <img src="candidat2.jpg" class="card-img-top" alt="Candidat 2">
+                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Candidat 2</h5>
-                            <p class="card-text">3ème année</p>
+                            <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
+                            <p class="card-text">Journalisme plurimédia 2</p>
                             <button type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 2">Voter</button>
+                                value="Candidat 2">Votez ce candidat</button>
                         </div>
                     </div>
 
                     <div class="card m-3" style="width: 18rem;">
-                        <img src="candidat3.jpg" class="card-img-top" alt="Candidat 3">
+                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Candidat 3</h5>
-                            <p class="card-text">1ère année</p>
+                            <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
+                            <p class="card-text">Communication visuelle 2</p>
                             <button type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 3">Voter</button>
+                                value="Candidat 3">Votez ce candidat</button>
                         </div>
                     </div>
                 </form>

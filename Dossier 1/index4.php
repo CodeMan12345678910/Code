@@ -18,23 +18,23 @@ $votes = $stmt_votes->fetchAll(PDO::FETCH_ASSOC);
 
 // Initialiser les variables pour chaque candidat
 $candidat_votes = [
-    'Candidat 1' => [
+    "Candidat 1" => [
         'votes' => 0,
         'pourcentage' => 0,
-        'photo' => 'images/candidat1.jpg',
-        'details' => '1ère année'
+        'photo' => 'Candidat 1.jpg',
+        'details' => "AMOUAN N'DORY PIERRE SAMUEL"
     ],
     'Candidat 2' => [
         'votes' => 0,
         'pourcentage' => 0,
-        'photo' => 'images/candidat2.jpg',
-        'details' => '3ème année'
+        'photo' => 'Candidat 2.jpg',
+        'details' => 'KRA KONAN JOSEPH EMMANUEL'
     ],
     'Candidat 3' => [
         'votes' => 0,
         'pourcentage' => 0,
-        'photo' => 'images/candidat3.jpg',
-        'details' => '2ème année'
+        'photo' => 'Candidat 3.jpg',
+        'details' => 'SAFFO JEAN MARTIAL TANO'
     ]
 ];
 
@@ -134,7 +134,7 @@ foreach ($votes as $vote) {
  
  setTimeout(function () {
      window.location.href = "index.php"; // Remplace par ta page de destination
- }, 10000);
+ }, 100000);
 
 </script>
 
