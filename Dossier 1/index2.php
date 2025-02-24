@@ -97,7 +97,7 @@ if ($result && $result['nombre_votes'] > 0) {
                                 value="Candidat 2">Votez ce candidat</button>
                         </div>
                     </div>
-jhhh
+
                     <div class="card m-3" style="width: 18rem;">
                         <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3">
                         <div class="card-body text-center">

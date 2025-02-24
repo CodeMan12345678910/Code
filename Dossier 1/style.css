@@ -6,12 +6,12 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #fb7e11;
   min-height: 100vh;
 }
 
 .header {
-  background-color: #d73b00;
+  background-color: #fb7e11;
   color: white;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -61,7 +61,7 @@ body {
 
 .candidate-name {
   font-size: 1.2rem;
-  color: #d73b00;
+  color: #fb7e11;
   margin-bottom: 0.5rem;
 }
 
@@ -73,13 +73,13 @@ body {
 
 .vote-button {
   background-color: white;
-  border: 2px solid #d73b00;
+  border: 2px solid #fb7e11;
   border-radius: 8px;
   padding: 1rem;
   margin: 0 1rem 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #d73b00;
+  color: #051c28;
   font-size: 1.1rem;
   width: calc(100% - 2rem);
 }

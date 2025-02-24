@@ -39,14 +39,14 @@
         .btn-primary{
         background-color: transparent;
         transition: .5s ease-out;
-        border-color:#d73b00 ;
+        border-color:#fb7e11 ;
     
         color: black;
         }
 
         .btn-primary:hover {
-        background-color: #d73b00;
-        border-color: #d73b00;
+        background-color: #fb7e11;
+        border-color: #fb7e11;
         }
 
 
