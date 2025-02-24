@@ -39,16 +39,31 @@
         .btn-primary{
         background-color: transparent;
         transition: .5s ease-out;
-        border-color:#fb7e11 ;
-    
+        border-color:#051c28 ;
         color: black;
         }
 
         .btn-primary:hover {
-        background-color: #fb7e11;
-        border-color: #fb7e11;
+        background-color: #051c28;
+        border-color: #051c28;
         }
 
+        .btn-danger{
+        background-color: transparent;
+        transition: .5s ease-out;
+        border-color: #051c28;
+        color: black;
+        }
+
+        .btn-danger:hover {
+        background-color: #051c28;
+        border-color: #051c28;
+        }
+
+        .visually-hidden{
+        background-color: #051c28;
+
+        }
 
         /* Deuxième animation*/
 

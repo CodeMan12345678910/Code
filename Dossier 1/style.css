@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #fb7e11;
+  background-color: #fff;
   min-height: 100vh;
 }
 
@@ -85,7 +85,7 @@ body {
 }
 
 .vote-button:hover {
-  background-color: #d73b00;
+  background-color: #fb7e11;
   color: white;
 }
 

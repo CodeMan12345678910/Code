@@ -29,7 +29,7 @@ session_start();
     <!-- Contenu principal -->
     <div id="content-1">
         <header class="header py-4">
-            <img src="téléchargement.png" alt="Logo-Esma" style="width: 100px;">
+            <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
             <h1 style="text-align: center;">Bienvenue sur la plateforme officielle de vote des étudiants </h1>
       
         </header>
