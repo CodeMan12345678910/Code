@@ -37,6 +37,7 @@ if ($result && $result['nombre_votes'] > 0) {
     <title>Vote - ESMA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <style>
         /* Preloader */
         #preloader {
@@ -67,7 +68,7 @@ if ($result && $result['nombre_votes'] > 0) {
     <!-- Contenu principal -->
     <div id="content">
         <header class="header text-center py-4">
-            <img src="téléchargement.png" alt="Logo-Esma" style="width: 100px;">
+            <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
             <h1>Élection des Représentants Étudiants</h1>
             <p>Choisissez votre représentant</p>
         </header>

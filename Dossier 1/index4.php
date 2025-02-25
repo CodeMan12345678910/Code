@@ -73,7 +73,7 @@ foreach ($votes as $vote) {
 
   <header class="header">
         <div class="logo">
-            <img src="téléchargement.png" alt="Logo-Esma" style="width: 100px;">
+            <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
        </div>
        <center>
         <h2 class="text-center">Résultats des votes</h2>
