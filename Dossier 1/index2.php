@@ -1,136 +1,61 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['identifiant'])) {
-    $_SESSION['message'] = "Veuillez vous connecter avant de voter.";
-    header("Location: index.php");
-    exit();
-}
-
-$identifiant = $_SESSION['identifiant'];
-
-try {
-    $clspit = new PDO("mysql:host=localhost;dbname=wh100255_users;charset=utf8", 'wh100255_users', 'JnBWzvKMydIy');
-    $clspit->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . htmlspecialchars($e->getMessage()));
-}
-
-// Vérifier si l'utilisateur a déjà voté
-$sql_check_vote = "SELECT nombre_votes, candidat FROM votes WHERE identifiant = :identifiant";
-$stmt_check_vote = $clspit->prepare($sql_check_vote);
-$stmt_check_vote->execute([':identifiant' => $identifiant]);
-$result = $stmt_check_vote->fetch(PDO::FETCH_ASSOC);
-
-if ($result && $result['nombre_votes'] > 0) {
-    $_SESSION['message'] = "Vous avez déjà voté pour " . htmlspecialchars($result['candidat']) . ". Vous ne pouvez plus voter.";
-    header("Location: index4.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote - ESMA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
-    <style>
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        #content {
-            display: none;
-        }
-    </style>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="index2.css">
 </head>
 <body>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner-border text-danger" role="status">
-            <span class="visually-hidden">Chargement...</span>
-        </div>
-    </div>
-
-    <!-- Contenu principal -->
-    <div id="content">
-        <header class="header text-center py-4">
-            <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
-            <h1>Élection des Représentants Étudiants</h1>
-            <p>Choisissez votre représentant</p>
-        </header>
-
-        <div class="container mt-4">
-            <h2 class="text-center"> Chaque vote compte. Faites entendre votre voix et participez activement à l’avenir de votre établissement.</h2>
-            <div class="row justify-content-center">
-                <form action="index3.php" method="POST" class="d-flex flex-wrap justify-content-center">
-                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
-
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 1">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
-                            <p class="card-text">Communication visuelle 1</p>
-                            <button type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 1">Votez ce candidat</button>
-                        </div>
-                    </div>
-
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
-                            <p class="card-text">Journalisme plurimédia 2</p>
-                            <button type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 2">Votez ce candidat</button>
-                        </div>
-                    </div>
-
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
-                            <p class="card-text">Communication visuelle 2</p>
-                            <button type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 3">Votez ce candidat</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
+    
 <center>
-<footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+    <h1>Présentation des candidats</h1>
 </center>
 
 
+    <div class="row row-cols-3 row-cols-md-3 g-4 mt-5 p-3">
+      <div class="col-sm-12 col-md-12 col-lg-6 mt-3 g-3" >
+        <div class="card" >
+          <video  controls src="video.mp4"></video>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-sm-12 col-md-12 col-lg-6 mt-3 g-3" >
+        <div class="card" >
+          <video controls  src="video.mp4"></video>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-sm-12 col-md-12 col-lg-6 mt-3 g-3" >
+        <div class="card" >
+          <video  controls src="video.mp4"></video>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+</div>
 
 
-    <script>
-        window.onload = function () {
-            setTimeout(function () {
-                document.getElementById("preloader").style.display = "none";
-                document.getElementById("content").style.display = "block";
-            }, 3000);
-        };
-    </script>
+ 
+<div class="container">
+      <button type="button" onclick="window.location.href='index3.php';">
+          ALLER AU VOTE
+          </button>
+  </div>  
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

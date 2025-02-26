@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['identifiant'])) {
+    $_SESSION['message'] = "Veuillez vous connecter avant de voter.";
+    header("Location: index3.php");
+    exit();
+}
+
+$identifiant = $_SESSION['identifiant'];
+
 try {
     $clspit = new PDO("mysql:host=localhost;dbname=wh100255_users;charset=utf8", 'wh100255_users', 'JnBWzvKMydIy');
     $clspit->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -6,62 +16,48 @@ try {
     die("Erreur de connexion : " . htmlspecialchars($e->getMessage()));
 }
 
-// Récupérer le total des votes
-$sql_total_votes = "SELECT COUNT(*) as total FROM votes";
-$stmt_total = $clspit->query($sql_total_votes);
-$total_votes = $stmt_total->fetch(PDO::FETCH_ASSOC)['total'];
+// Vérifier si l'utilisateur a déjà voté
+$sql_check_vote = "SELECT nombre_votes, candidat FROM votes WHERE identifiant = :identifiant";
+$stmt_check_vote = $clspit->prepare($sql_check_vote);
+$stmt_check_vote->execute([':identifiant' => $identifiant]);
+$result = $stmt_check_vote->fetch(PDO::FETCH_ASSOC);
 
-// Récupérer les votes par candidat
-$sql_votes = "SELECT candidat, COUNT(*) as nombre FROM votes GROUP BY candidat";
-$stmt_votes = $clspit->query($sql_votes);
-$votes = $stmt_votes->fetchAll(PDO::FETCH_ASSOC);
-
-// Initialiser les variables pour chaque candidat
-$candidat_votes = [
-    "Candidat 1" => [
-        'votes' => 0,
-        'pourcentage' => 0,
-        'photo' => 'Candidat 1.jpg',
-        'details' => "AMOUAN N'DORY PIERRE SAMUEL"
-    ],
-    'Candidat 2' => [
-        'votes' => 0,
-        'pourcentage' => 0,
-        'photo' => 'Candidat 2.jpg',
-        'details' => 'KRA KONAN JOSEPH EMMANUEL'
-    ],
-    'Candidat 3' => [
-        'votes' => 0,
-        'pourcentage' => 0,
-        'photo' => 'Candidat 3.jpg',
-        'details' => 'SAFFO JEAN MARTIAL TANO'
-    ]
-];
-
-// Calculer les votes et les pourcentages pour chaque candidat
-foreach ($votes as $vote) {
-    if (isset($candidat_votes[$vote['candidat']])) {
-        $candidat_votes[$vote['candidat']]['votes'] = $vote['nombre'];
-        $candidat_votes[$vote['candidat']]['pourcentage'] = ($total_votes > 0) ? round(($vote['nombre'] / $total_votes) * 100, 2) : 0;
-    }
+if ($result && $result['nombre_votes'] > 0) {
+    $_SESSION['message'] = "Vous avez déjà voté pour " . htmlspecialchars($result['candidat']) . ". Vous ne pouvez plus voter.";
+    header("Location: index4.php");
+    exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résultats des Votes</title>
+    <title>Vote - ESMA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
+        #content {
+            display: none;
+        }
+    </style>
+</head>
 <body>
 
-
-khbdshvqhsbjsbvhbvhsqbhvb
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner-border text-danger" role="status">
@@ -69,54 +65,54 @@ khbdshvqhsbjsbvhbvhsqbhvb
         </div>
     </div>
 
-
-
-  <header class="header">
-        <div class="logo">
+    <!-- Contenu principal -->
+    <div id="content">
+        <header class="header text-center py-4">
             <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
-       </div>
-       <center>
-        <h2 class="text-center">Résultats des votes</h2>
-        <p class="text-center">Nombre total de votes : <strong><?php echo $total_votes; ?></strong></p>
-       </center>
-    </header>
+            <h1>Élection des Représentants Étudiants</h1>
+            <p>Choisissez votre représentant</p>
+        </header>
 
+        <div class="container mt-4">
+            <h2 class="text-center"> Chaque vote compte. Faites entendre votre voix et participez activement à l’avenir de votre établissement.</h2>
+            <div class="row justify-content-center">
+                <form action="index-3.php" method="POST" class="d-flex flex-wrap justify-content-center">
+                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
 
-
-
-
-    <div class="container mt-5">
-       
-
-        <!-- Affichage des résultats pour chaque candidat -->
-        <?php foreach ($candidat_votes as $nom => $data): ?>
-            <div class="candidate-card" style="margin: 15px; border: 1px solid #ddd; padding: 15px;">
-
-                <img src="<?php echo $data['photo']; ?>" alt="<?php echo $nom; ?>" class="candidate-photo"
-                    style="width: 150px; height: 150px; object-fit: cover;">
-
-                <div class="candidate-info" style="display: inline-block; margin-left: 20px;">
-
-                    <h3 class="candidate-name"><?php echo $nom; ?></h3>
-
-                    <p class="candidate-details"><?php echo $data['details']; ?></p>
-
-                    <p><strong>Votes : <?php echo $data['votes']; ?> (<?php echo $data['pourcentage']; ?>%)</strong></p>
-                    
-                    <div class="progress">
-
-                        <div class="progress-bar bg-success" role="progressbar"
-                            style="width: <?php echo $data['pourcentage']; ?>%;"
-                            aria-valuenow="<?php echo $data['pourcentage']; ?>" aria-valuemin="0" aria-valuemax="100">
-
-                            <?php echo $data['pourcentage']; ?>%
+                    <div class="card m-3" style="width: 18rem;">
+                        <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
+                            <p class="card-text">Communication visuelle 1</p>
+                            <button type="submit" class="btn btn-danger" name="candidat"
+                                value="Candidat 1">Votez ce candidat</button>
                         </div>
                     </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
 
+                    <div class="card m-3" style="width: 18rem;">
+                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
+                            <p class="card-text">Journalisme plurimédia 2</p>
+                            <button type="submit" class="btn btn-danger" name="candidat"
+                                value="Candidat 2">Votez ce candidat</button>
+                        </div>
+                    </div>
+
+                    <div class="card m-3" style="width: 18rem;">
+                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
+                            <p class="card-text">Communication visuelle 2</p>
+                            <button type="submit" class="btn btn-danger" name="candidat"
+                                value="Candidat 3">Votez ce candidat</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
 
 
 <center>
@@ -124,23 +120,17 @@ khbdshvqhsbjsbvhbvhsqbhvb
 </center>
 
 
-<script>
-
-    window.onload = function () {
-     setTimeout(function () {
-         document.getElementById("preloader").style.display = "none";
-     }, 3000);
- };
- 
- setTimeout(function () {
-     window.location.href = "index.php"; // Remplace par ta page de destination
- }, 100000);
-
-</script>
 
 
+    <script>
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("preloader").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }, 3000);
+        };
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
