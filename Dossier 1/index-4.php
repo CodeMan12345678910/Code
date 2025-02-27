@@ -61,10 +61,10 @@ foreach ($votes as $vote) {
 <body>
 
 
-khbdshvqhsbjsbvhbvhsqbhvb
+
     <!-- Preloader -->
     <div id="preloader">
-        <div class="spinner-border text-danger" role="status">
+        <div class="spinner-border" role="status">
             <span class="visually-hidden">Chargement...</span>
         </div>
     </div>
@@ -83,40 +83,43 @@ khbdshvqhsbjsbvhbvhsqbhvb
 
 
 
-
+<center>
 
     <div class="container mt-5">
        
-
+    
         <!-- Affichage des résultats pour chaque candidat -->
         <?php foreach ($candidat_votes as $nom => $data): ?>
             <div class="candidate-card" style="margin: 15px; border: 1px solid #ddd; padding: 15px;">
-
+    
                 <img src="<?php echo $data['photo']; ?>" alt="<?php echo $nom; ?>" class="candidate-photo"
-                    style="width: 150px; height: 150px; object-fit: cover;">
-
+                    style="width: 150px; height: 150px; object-fit: cover; border-radius: 20px;">
+    
                 <div class="candidate-info" style="display: inline-block; margin-left: 20px;">
-
+    
                     <h3 class="candidate-name"><?php echo $nom; ?></h3>
-
+    
                     <p class="candidate-details"><?php echo $data['details']; ?></p>
-
+    
                     <p><strong>Votes : <?php echo $data['votes']; ?> (<?php echo $data['pourcentage']; ?>%)</strong></p>
                     
                     <div class="progress">
-
+    
                         <div class="progress-bar bg-success" role="progressbar"
                             style="width: <?php echo $data['pourcentage']; ?>%;"
                             aria-valuenow="<?php echo $data['pourcentage']; ?>" aria-valuemin="0" aria-valuemax="100">
-
+    
                             <?php echo $data['pourcentage']; ?>%
                         </div>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
-
+    
     </div>
+
+</center>
+
 
 
 <center>
@@ -134,7 +137,7 @@ khbdshvqhsbjsbvhbvhsqbhvb
  
  setTimeout(function () {
      window.location.href = "index3.php"; // Remplace par ta page de destination
- }, 100000);
+ }, 10000);
 
 </script>
 

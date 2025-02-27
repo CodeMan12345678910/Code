@@ -18,7 +18,7 @@
         }
 
         .text-container {
-            font-size: 3rem;
+            font-size: 50px;
             font-weight: bold;
             position: relative;
             text-align: center;
@@ -29,9 +29,9 @@
 <body>
 
     <div class="text-container">ESMA, VOTE !</div>
-    <div class="text-container">ESMA, EST MAGNIFIQUE !</div>
-    <div class="text-container">ESMA, c'est magique !</div>
-    <div class="text-container">ESMA, toujours au top !</div>
+    <div class="text-container">Ton vote, ta voix</div>
+    <div class="text-container">Chaque voix compte, y comprend la tienne </div>
+    <div class="text-container">L'élection, c'est le pouvoir entre tes mains</div>
 
     <!-- Inclusion de GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

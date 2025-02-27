@@ -24,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
 
     if (!$user) {
         $_SESSION['message'] = "Identifiant incorrect. Veuillez réessayer.";
-        header("Location: index.php");
+        header("Location: index3.php");
         exit();
     } else {
         // Stocker l'identifiant en session
         $_SESSION['identifiant'] = $identifiant;
-        header("Location: index2.php");
+        header("Location: index4.php");
         exit();
     }
 }

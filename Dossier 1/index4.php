@@ -24,7 +24,7 @@ $result = $stmt_check_vote->fetch(PDO::FETCH_ASSOC);
 
 if ($result && $result['nombre_votes'] > 0) {
     $_SESSION['message'] = "Vous avez déjà voté pour " . htmlspecialchars($result['candidat']) . ". Vous ne pouvez plus voter.";
-    header("Location: index4.php");
+    header("Location: index3.php");
     exit();
 }
 ?>
@@ -35,35 +35,21 @@ if ($result && $result['nombre_votes'] > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote - ESMA</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
-    <style>
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        #content {
-            display: none;
-        }
-    </style>
+ 
 </head>
 <body>
 
     <!-- Preloader -->
     <div id="preloader">
-        <div class="spinner-border text-danger" role="status">
+        <div class="spinner-border" role="status">
             <span class="visually-hidden">Chargement...</span>
         </div>
     </div>
+
 
     <!-- Contenu principal -->
     <div id="content">
@@ -79,7 +65,7 @@ if ($result && $result['nombre_votes'] > 0) {
                 <form action="index-3.php" method="POST" class="d-flex flex-wrap justify-content-center">
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
 
-                    <div class="card m-3" style="width: 18rem;">
+                    <div class="card m-3" style="width: 18rem;" data-aos="zoom-in-down" >
                         <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
@@ -89,8 +75,8 @@ if ($result && $result['nombre_votes'] > 0) {
                         </div>
                     </div>
 
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2">
+                    <div class="card m-3" style="width: 18rem;" data-aos="zoom-in-down">
+                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2" data-aos="fade-right">
                         <div class="card-body text-center">
                             <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
                             <p class="card-text">Journalisme plurimédia 2</p>
@@ -99,8 +85,8 @@ if ($result && $result['nombre_votes'] > 0) {
                         </div>
                     </div>
 
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3">
+                    <div class="card m-3" style="width: 18rem;" data-aos="zoom-in-down">
+                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3" >
                         <div class="card-body text-center">
                             <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
                             <p class="card-text">Communication visuelle 2</p>
@@ -114,23 +100,20 @@ if ($result && $result['nombre_votes'] > 0) {
     </div>
 
 
-
 <center>
 <footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
 </center>
 
-
-
-
-    <script>
+ <script>
+        
         window.onload = function () {
             setTimeout(function () {
                 document.getElementById("preloader").style.display = "none";
                 document.getElementById("content").style.display = "block";
             }, 3000);
         };
-    </script>
+        </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
