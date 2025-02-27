@@ -18,7 +18,7 @@ session_start();
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="spinner-border text-danger" role="status">
+    <div class="spinner-border" role="status">
       <span class="visually-hidden">Chargement...</span>
     </div>
   </div>

@@ -1,5 +1,16 @@
-button{
-width: 40%;
+
+
+.container{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 20px;
+height: 100vh;
+}
+
+
+.btn-primary{
+width: 40%;    
 height: 50px;
 background-color: #fb7e11;
 color: white;
@@ -11,16 +22,8 @@ border: none;
 transition: .3s ease-in-out;
 }
 
-button:hover{
-background-color: #051c28;
+.btn-primary:hover{
+background-color: #051c28;    
 color: white;
-
-}
-
-.container{
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 20px;
 }
 

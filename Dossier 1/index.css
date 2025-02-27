@@ -61,8 +61,8 @@
         border-color: #051c28;
         }
 
-        .visually-hidden{
-        background-color: #051c28;
+        .spinner-border{
+        color: #051c28;
         }
 
         /* Deuxième animation*/
@@ -89,4 +89,17 @@
           border: 1px solid #f5c6cb;
         }
   
+        .form-control {
+          transition: width 2s ease-in-out, margin-top 0.5s ease-in-out; /* Correction de la syntaxe de transition */
+      }
       
+      .form-control:hover {    
+          margin-top: -10px; /* Déplacement vers le haut au survol */
+          cursor: pointer; /* Changement de curseur */
+          
+      }
+      
+      .form-control:focus {
+          border-color: #fb7e11; /* Couleur de la bordure au focus */
+          box-shadow: 0 0 10px #fb7e11; /* Couleur de l'ombre portée */
+      }
