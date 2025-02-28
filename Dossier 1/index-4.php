@@ -55,6 +55,7 @@ foreach ($votes as $vote) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultats des Votes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -73,7 +74,7 @@ foreach ($votes as $vote) {
 
   <header class="header">
         <div class="logo">
-            <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
+            <img src="logo.jpg" alt="Logo-Esma" style="width: 90px;">
        </div>
        <center>
         <h2 class="text-center">Résultats des votes</h2>
@@ -121,6 +122,26 @@ foreach ($votes as $vote) {
 </center>
 
 
+<center>
+
+<h3 id="gsap-text" class="animated-text1">Y'A PAS L'HOMME DEVANT ESMA</h3>
+
+<svg id="star1" viewBox="0 0 24 24" fill="#fb7e11">
+        <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
+    </svg>
+    
+    <svg id="star2" viewBox="0 0 24 24" fill="#fb7e11">
+        <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
+    </svg>
+    
+    <svg id="star3" viewBox="0 0 24 24" fill="#fb7e11">
+        <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
+    </svg>
+
+
+</center>  
+
+
 
 <center>
 <footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
@@ -137,13 +158,14 @@ foreach ($votes as $vote) {
  
  setTimeout(function () {
      window.location.href = "index3.php"; // Remplace par ta page de destination
- }, 10000);
+ }, 50000);
 
 </script>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script4.js"></script>
 </body>
 
 </html>

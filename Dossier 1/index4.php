@@ -37,11 +37,27 @@ if ($result && $result['nombre_votes'] > 0) {
     <title>Vote - ESMA</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
  
 </head>
 <body>
+
+<style>
+
+        .animated-text {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+
+
+</style>
+
+
+
 
     <!-- Preloader -->
     <div id="preloader">
@@ -60,12 +76,12 @@ if ($result && $result['nombre_votes'] > 0) {
         </header>
 
         <div class="container mt-4">
-            <h2 class="text-center"> Chaque vote compte. Faites entendre votre voix et participez activement à l’avenir de votre établissement.</h2>
+            <h2 class="text-center" id="typed-text"></h2>
             <div class="row justify-content-center">
                 <form action="index-3.php" method="POST" class="d-flex flex-wrap justify-content-center">
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
 
-                    <div class="card m-3" style="width: 18rem;" data-aos="zoom-in-down" >
+                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down" >
                         <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
@@ -75,7 +91,7 @@ if ($result && $result['nombre_votes'] > 0) {
                         </div>
                     </div>
 
-                    <div class="card m-3" style="width: 18rem;" data-aos="zoom-in-down">
+                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down">
                         <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2" data-aos="fade-right">
                         <div class="card-body text-center">
                             <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
@@ -85,7 +101,7 @@ if ($result && $result['nombre_votes'] > 0) {
                         </div>
                     </div>
 
-                    <div class="card m-3" style="width: 18rem;" data-aos="zoom-in-down">
+                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down">
                         <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3" >
                         <div class="card-body text-center">
                             <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
@@ -98,6 +114,29 @@ if ($result && $result['nombre_votes'] > 0) {
             </div>
         </div>
     </div>
+
+
+
+    <center>
+
+<h3 id="gsap-text" class="animated-text1">Y'A PAS L'HOMME DEVANT ESMA</h3>
+
+<svg id="star1" viewBox="0 0 24 24" fill="#fb7e11">
+        <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
+    </svg>
+    
+    <svg id="star2" viewBox="0 0 24 24" fill="#fb7e11">
+        <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
+    </svg>
+    
+    <svg id="star3" viewBox="0 0 24 24" fill="#fb7e11">
+        <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
+    </svg>
+
+
+</center>  
+
+
 
 
 <center>
@@ -116,5 +155,8 @@ if ($result && $result['nombre_votes'] > 0) {
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="script2.js"></script>
+<script src="script4.js"></script>
 </body>
 </html>
