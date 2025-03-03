@@ -86,7 +86,7 @@ if ($result && $result['nombre_votes'] > 0) {
                         <div class="card-body text-center">
                             <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
                             <p class="card-text">Communication visuelle 1</p>
-                            <button onclick="launchConfetti()" type="submit" class="btn btn-danger" name="candidat"
+                            <button  type="submit" class="btn btn-danger" name="candidat"
                                 value="Candidat 1">Votez ce candidat</button>
                         </div>
                     </div>
@@ -96,7 +96,7 @@ if ($result && $result['nombre_votes'] > 0) {
                         <div class="card-body text-center">
                             <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
                             <p class="card-text">Journalisme plurimédia 2</p>
-                            <button onclick="launchConfetti()" type="submit" class="btn btn-danger" name="candidat"
+                            <button  type="submit" class="btn btn-danger" name="candidat"
                                 value="Candidat 2">Votez ce candidat</button>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ if ($result && $result['nombre_votes'] > 0) {
                         <div class="card-body text-center">
                             <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
                             <p class="card-text">Communication visuelle 2</p>
-                            <button onclick="launchConfetti()" type="submit" class="btn btn-danger" name="candidat"
+                            <button  type="submit" class="btn btn-danger" name="candidat"
                                 value="Candidat 3">Votez ce candidat</button>
                         </div>
                     </div>
@@ -158,6 +158,5 @@ if ($result && $result['nombre_votes'] > 0) {
 <script src="script.js"></script>
 <script src="script2.js"></script>
 <script src="script4.js"></script>
-<script src="script5.js"></script>
 </body>
 </html>

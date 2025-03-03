@@ -56,6 +56,7 @@ foreach ($votes as $vote) {
     <title>Résultats des Votes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -166,6 +167,7 @@ foreach ($votes as $vote) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script4.js"></script>
+    <script src="script5.js"></script>
 </body>
 
 </html>
