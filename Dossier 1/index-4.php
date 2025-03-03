@@ -11,6 +11,15 @@ $sql_total_votes = "SELECT COUNT(*) as total FROM votes";
 $stmt_total = $clspit->query($sql_total_votes);
 $total_votes = $stmt_total->fetch(PDO::FETCH_ASSOC)['total'];
 
+
+
+// Récupérer les votes où le nombre de votes est égal à 1
+$sql_single_vote = "SELECT * FROM votes WHERE nombre_votes = 1";
+$stmt_single_vote = $clspit->query($sql_single_vote);
+$single_vote_users = $stmt_single_vote->fetchAll(PDO::FETCH_ASSOC);  // Récupère tous les utilisateurs avec 1 vote
+
+
+
 // Récupérer les votes par candidat
 $sql_votes = "SELECT candidat, COUNT(*) as nombre FROM votes GROUP BY candidat";
 $stmt_votes = $clspit->query($sql_votes);
@@ -72,16 +81,18 @@ foreach ($votes as $vote) {
     </div>
 
 
+<center>
 
-  <header class="header">
-        <div class="logo">
-            <img src="logo.jpg" alt="Logo-Esma" style="width: 90px;">
-       </div>
-       <center>
-        <h2 class="text-center">Résultats des votes</h2>
-        <p class="text-center">Nombre total de votes : <strong><?php echo $total_votes; ?></strong></p>
-       </center>
-    </header>
+    <header class="header">
+          <div class="logo">
+              <img src="logo.jpg" alt="Logo-Esma" style="width: 40px;">
+         </div>
+         <center>
+          <h2 class="text-center">Résultats des votes</h2>
+         </center>
+      </header>
+
+</center>
 
 
 
@@ -123,9 +134,19 @@ foreach ($votes as $vote) {
 </center>
 
 
+
+
+<center>
+    <p class="text-center">Nombre de votant : <strong><?php echo $total_votes; ?></strong></p>
+    <p class="text-center">Nombre de personnes ayant voté: <strong><?php echo count($single_vote_users); ?></strong></p>
+</center>
+
+
+
+
 <center>
 
-<h3 id="gsap-text" class="animated-text1">Y'A PAS L'HOMME DEVANT ESMA</h3>
+<h3 id="gsap-text" class="animated-text1 mt-5">Y'A PAS L'HOMME DEVANT ESMA</h3>
 
 <svg id="star1" viewBox="0 0 24 24" fill="#fb7e11">
         <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
