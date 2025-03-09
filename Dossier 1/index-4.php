@@ -62,6 +62,7 @@ foreach ($votes as $vote) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
     <title>Résultats des Votes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -103,7 +104,7 @@ foreach ($votes as $vote) {
     
         <!-- Affichage des résultats pour chaque candidat -->
         <?php foreach ($candidat_votes as $nom => $data): ?>
-            <div class="candidate-card" style="margin: 15px; border: 1px solid #ddd; padding: 15px;">
+            <div class="candidate-card" style="margin: 15px; border: 1px solid #ddd; padding: 15px; border-left-color:5px #fb7e11;">
     
                 <img src="<?php echo $data['photo']; ?>" alt="<?php echo $nom; ?>" class="candidate-photo"
                     style="width: 150px; height: 150px; object-fit: cover; border-radius: 20px;">
@@ -137,8 +138,7 @@ foreach ($votes as $vote) {
 
 
 <center>
-    <p class="text-center" style="font-size: 30px;">Nombre de votant : <strong><?php echo $total_votes; ?></strong></p>
-    <p class="text-center" style="font-size: 30px;">Nombre de personnes ayant voté: <strong><?php echo count($single_vote_users); ?></strong></p>
+    <p class="text-center" style="font-size: 30px;">Nombre de votant : <strong><?php echo count($single_vote_users); ?></strong> / <strong><?php echo $total_votes; ?></strong> étudiants </p>
 </center>
 
 
@@ -166,7 +166,7 @@ foreach ($votes as $vote) {
 
 
 <center>
-<footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+<footer> © 2025 BDE-ESMA | DEV-WEB-&-MOBILE-3 | Tous droits réservés.</footer>
 </center>
 
 

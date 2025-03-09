@@ -112,7 +112,7 @@ if (isset($_SESSION['message'])) {
 
 
 <center>
-  <footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+  <footer> © 2025 BDE-ESMA | DEV-WEB-&-MOBILE-3 | Tous droits réservés.</footer>
 </center>
 
 

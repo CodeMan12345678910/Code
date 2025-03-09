@@ -142,7 +142,7 @@ if ($result && $result['nombre_votes'] > 0) {
 
 
 <center>
-<footer> © 2025 - BDE ESMA | Tous droits réservés .</footer>
+<footer> © 2025 BDE-ESMA | DEV-WEB-&-MOBILE-3 | Tous droits réservés.</footer>
 </center>
 
  <script>
