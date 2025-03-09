@@ -179,7 +179,7 @@ foreach ($votes as $vote) {
  };
  
  setTimeout(function () {
-     window.location.href = "index-4.php"; // Remplace par ta page de destination
+     window.location.href = "index3.php"; // Remplace par ta page de destination
  }, 10000);
 
 </script>

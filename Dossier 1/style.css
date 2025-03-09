@@ -39,15 +39,17 @@ body {
 
 .candidate-card {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20 px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
   width: 50%;
+  border-left-color: 2px solid #fb7e11;;
 }
 
 .candidate-card:hover {
   transform: translateY(-5px);
+  
 }
 
 .candidate-photo {
