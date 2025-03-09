@@ -80,29 +80,9 @@ if ($result && $result['nombre_votes'] > 0) {
             <div class="row justify-content-center">
                 <form action="index-3.php" method="POST" class="d-flex flex-wrap justify-content-center">
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
-
-                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down" >
-                        <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 1">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
-                            <p class="card-text">Communication visuelle 1</p>
-                            <button  type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 1">Votez ce candidat</button>
-                        </div>
-                    </div>
-
+                    
                     <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down">
-                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2" data-aos="fade-right">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
-                            <p class="card-text">Journalisme plurimédia 2</p>
-                            <button  type="submit" class="btn btn-danger" name="candidat"
-                                value="Candidat 2">Votez ce candidat</button>
-                        </div>
-                    </div>
-
-                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down">
-                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 3" >
+                        <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 3" >
                         <div class="card-body text-center">
                             <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
                             <p class="card-text">Communication visuelle 2</p>
@@ -110,6 +90,28 @@ if ($result && $result['nombre_votes'] > 0) {
                                 value="Candidat 3">Votez ce candidat</button>
                         </div>
                     </div>
+
+                    
+                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down">
+                        <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2" data-aos="fade-right">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
+                            <p class="card-text">Journalisme plurimédia 2</p>
+                            <button  type="submit" class="btn btn-danger" name="candidat"
+                            value="Candidat 2">Votez ce candidat</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card m-3 hidden" style="width: 18rem;" data-aos="zoom-in-down" >
+                        <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
+                            <p class="card-text">Communication visuelle 1</p>
+                            <button  type="submit" class="btn btn-danger" name="candidat"
+                                value="Candidat 1">Votez ce candidat</button>
+                        </div>
+                    </div>
+                    
                 </form>
             </div>
         </div>

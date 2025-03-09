@@ -31,7 +31,7 @@ $candidat_votes = [
         'votes' => 0,
         'pourcentage' => 0,
         'photo' => 'Candidat 1.jpg',
-        'details' => "AMOUAN N'DORY PIERRE SAMUEL"
+        'details' => "SAFFO JEAN MARTIAL TANO"
     ],
     'Candidat 2' => [
         'votes' => 0,
@@ -43,7 +43,7 @@ $candidat_votes = [
         'votes' => 0,
         'pourcentage' => 0,
         'photo' => 'Candidat 3.jpg',
-        'details' => 'SAFFO JEAN MARTIAL TANO'
+        'details' => "AMOUAN N'DORY PIERRE SAMUEL"
     ]
 ];
 
@@ -137,8 +137,8 @@ foreach ($votes as $vote) {
 
 
 <center>
-    <p class="text-center">Nombre de votant : <strong><?php echo $total_votes; ?></strong></p>
-    <p class="text-center">Nombre de personnes ayant voté: <strong><?php echo count($single_vote_users); ?></strong></p>
+    <p class="text-center" style="font-size: 30px;">Nombre de votant : <strong><?php echo $total_votes; ?></strong></p>
+    <p class="text-center" style="font-size: 30px;">Nombre de personnes ayant voté: <strong><?php echo count($single_vote_users); ?></strong></p>
 </center>
 
 
@@ -179,8 +179,8 @@ foreach ($votes as $vote) {
  };
  
  setTimeout(function () {
-     window.location.href = "index3.php"; // Remplace par ta page de destination
- }, 50000);
+     window.location.href = "index-4.php"; // Remplace par ta page de destination
+ }, 10000);
 
 </script>
 

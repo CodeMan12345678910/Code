@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation de Texte avec GSAP</title>
+    <link rel="stylesheet" href="https://projet3.bonovapro.com/loaderio-d1e4777e58acc975f9735df06ba8004f.html">
+    <title>ESMA | VOTE</title>
     <style>
         body {
             display: flex;
@@ -42,7 +43,7 @@
             let tl = gsap.timeline({
                 onComplete: () => {
                     // Redirection après l'animation
-                    window.location.href = "index2.php"; // Remplace par ton lien
+                    window.location.href = "index3.php"; // Remplace par ton lien
                 }
             });
 
