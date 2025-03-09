@@ -83,14 +83,14 @@ if (isset($_SESSION['message'])) {
       setTimeout(function () {
         document.getElementById("preloader").style.display = "none";
         document.getElementById("content").style.display = "block";
-      }, 3000);
+      }, 300);
     };
   </script>
 
 
 <center>
 
-  <h3 id="gsap-text" class="animated-text1">Y'A PAS L'HOMME DEVANT ESMA</h3>
+  <h3 id="gsap-text" class="animated-text1"><span style="color : #fb7e11;">ESMA,</span> L'école qui professionnalise votre talent</h3>
   
   <svg id="star1" viewBox="0 0 24 24" fill="#fb7e11">
           <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />

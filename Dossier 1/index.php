@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://projet3.bonovapro.com/loaderio-d1e4777e58acc975f9735df06ba8004f.html">
     <title>ESMA | VOTE</title>
     <style>
         body {
@@ -28,6 +27,10 @@
     </style>
 </head>
 <body>
+
+<!--   <link rel="stylesheet" href="https://projet3.bonovapro.com/loaderio-d1e4777e58acc975f9735df06ba8004f.html">-->
+
+
 
     <div class="text-container">ESMA, VOTE !</div>
     <div class="text-container">Ton vote, ta voix</div>

@@ -8,6 +8,7 @@
 body {
   background-color: #fff;
   min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header {
@@ -39,12 +40,12 @@ body {
 
 .candidate-card {
   background-color: white;
-  border-radius: 20 px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  width: 50%;
-  border-left-color: 2px solid #fb7e11;;
+  width: 70%;
+  border-left-color:#fb7e11;;
 }
 
 .candidate-card:hover {

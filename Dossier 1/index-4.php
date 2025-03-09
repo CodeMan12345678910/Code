@@ -146,7 +146,7 @@ foreach ($votes as $vote) {
 
 <center>
 
-<h3 id="gsap-text" class="animated-text1 mt-5">Y'A PAS L'HOMME DEVANT ESMA</h3>
+<h3 id="gsap-text" class="animated-text1 mt-5"> <span style="color : #fb7e11;">ESMA,</span> L'école qui professionnalise votre talent</h3>
 
 <svg id="star1" viewBox="0 0 24 24" fill="#fb7e11">
         <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
@@ -175,12 +175,12 @@ foreach ($votes as $vote) {
     window.onload = function () {
      setTimeout(function () {
          document.getElementById("preloader").style.display = "none";
-     }, 3000);
+     }, 300);
  };
  
  setTimeout(function () {
      window.location.href = "index3.php"; // Remplace par ta page de destination
- }, 10000);
+ }, 1000000);
 
 </script>
 
