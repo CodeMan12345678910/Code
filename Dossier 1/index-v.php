@@ -13,8 +13,9 @@ try {
 }
 
 // Vérifier si un matricule a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id']) && isset($_POST['MDP'])) {
     $identifiant = htmlspecialchars(trim($_POST['id']));
+    $MDP = htmlspecialchars(trim($_POST['MDP']));
 
     // Vérifier si l'identifiant existe dans la base de données
     $sql_check_identifiant = "SELECT * FROM votes WHERE identifiant = :identifiant";
@@ -22,8 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $stmt_check_identifiant->execute([':identifiant' => $identifiant]);
     $user = $stmt_check_identifiant->fetch(PDO::FETCH_ASSOC);
 
-    if (!$user) {
-        $_SESSION['message'] = "Identifiant incorrect. Veuillez réessayer.";
+    // Comparer les mots de passe (sans hachage)
+    if (!$user || $MDP !== $user['MDP']) {
+        $_SESSION['message'] = "Identifiant ou mot de passe incorrect. Veuillez réessayer.";
         header("Location: index3.php");
         exit();
     } else {

@@ -57,9 +57,15 @@ if (isset($_SESSION['message'])) {
 ?>
 
           <form action="index-v.php" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="id" name="id" placeholder="Entrer votre matricule" required>
               <label for="id">Entrez votre matricule</label>
+            </div>
+
+                <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="MDP" name="MDP" placeholder="Entrer votre matricule" required>
+              <label for="id">Entrez votre mot de passe</label>
             </div>
             <div class="checkbox mb-3">
            
