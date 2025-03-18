@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id']) && isset($_POST
     } else {
         // Stocker l'identifiant en session
         $_SESSION['identifiant'] = $identifiant;
+        $_SESSION['MDP'] = $MDP;
         header("Location: index4.php");
         exit();
     }

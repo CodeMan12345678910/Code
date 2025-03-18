@@ -1,13 +1,15 @@
 <?php
 session_start();
+var_dump($_SESSION); // Debugging
 
-if (!isset($_SESSION['identifiant'])) {
+if (!isset($_SESSION['identifiant']) || empty($_SESSION['identifiant'])) {
     $_SESSION['message'] = "Veuillez vous connecter avant de voter.";
     header("Location: index3.php");
     exit();
 }
 
 $identifiant = $_SESSION['identifiant'];
+
 
 try {
     $clspit = new PDO("mysql:host=localhost;dbname=wh100255_users;charset=utf8", 'wh100255_users', 'JnBWzvKMydIy');

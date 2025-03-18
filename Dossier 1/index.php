@@ -21,7 +21,7 @@
         }
 
         .text-container {
-            font-size: 50px;
+            font-size: 30px;
             font-weight: bold;
             position: relative;
             text-align: center;

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['identifiant'])) {
+if (!isset($_SESSION['identifiant']) || empty($_SESSION['identifiant']) ) {
     $_SESSION['message'] = "Veuillez vous connecter avant de voter.";
     header("Location: index.php");
     exit();

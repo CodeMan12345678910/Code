@@ -44,27 +44,30 @@ session_start();
           <h1 class="animated-text display-4 fw-bold lh-1 text-body-emphasis mb-3">
             Connectez-vous pour voter
           </h1>
-          <p class="col-lg-10 fs-4">
-          </p>
+          <p class="col-lg-10 fs-4"></p>
         </div>
+        
         <div class="col-md-10 mx-auto col-lg-5">
-        <?php
+       
+       <?php
 if (isset($_SESSION['message'])) {
   $isSuccess = strpos($_SESSION['message'], 'Merci') !== false; // Vérifie si "Merci" est dans le message
   echo '<div class="message ' . ($isSuccess ? 'success' : 'error') . '">' . $_SESSION['message'] . '</div>';
   unset($_SESSION['message']);
 }
 ?>
-
+<h1 class="animated-text display-4 fw-bold lh-1 text-body-emphasis mb-3">
+  Connectez-vous pour voter
+</h1>
           <form action="index-v.php" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
 
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="id" name="id" placeholder="Entrer votre matricule" required>
               <label for="id">Entrez votre matricule</label>
             </div>
-
+     <div class="checkbox mb-3"></div>
                 <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="MDP" name="MDP" placeholder="Entrer votre matricule" required>
+              <input type="password" class="form-control" id="MDP" name="MDP" placeholder="Entrer votre matricule" required>
               <label for="id">Entrez votre mot de passe</label>
             </div>
             <div class="checkbox mb-3">
