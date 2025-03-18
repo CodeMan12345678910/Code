@@ -6,6 +6,14 @@ if (!isset($_SESSION['identifiant']) || empty($_SESSION['identifiant'])) {
     exit();
 }
 
+if (isset($_SESSION['identifiant']) || !empty($_SESSION['identifiant'])) {
+    $_SESSION['message'] = "Vous avez déjà voté.";
+    header("Location: index-4.php");
+    exit();
+}
+
+
+
 $identifiant = $_SESSION['identifiant'];
 
 

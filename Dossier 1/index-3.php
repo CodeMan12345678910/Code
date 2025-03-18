@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['candidat'])) {
 
     if ($result && $result['nombre_votes'] > 0) {
         $_SESSION['message'] = "Vous avez déjà voté.";
-        header("Location: index3.php");
+        header("Location: index-4.php");
         exit();
     }
 

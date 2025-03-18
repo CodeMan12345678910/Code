@@ -11,11 +11,16 @@ session_start();
   <title>Connexion - Vote</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="style.css">
 </head>
+<style>
 
-<body>
+</style>
+
+<body> 
+
 
 
   <!-- Preloader -->
@@ -29,21 +34,23 @@ session_start();
 
 
     <!-- Contenu principal -->
-    <div id="content-1">
+    <!--<div id="content-1">-->
         <header class="header py-4">
             <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
-            <h1 style="text-align: center;" id="gsap-text" class="animated-text">Bienvenue sur la plateforme officielle de vote des étudiants </h1>
+            <h3 style="text-align: center;" id="gsap-text" class="animated-text">Bienvenue sur 
+              la plateforme officielle de vote des étudiants </h3>
             
         </header>
-
+ 
   <!-- Contenu principal -->
-  <div id="content">
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-      <div class="row align-items-center g-lg-5 py-5">
-        <div class="col-lg-7 text-center text-lg-start">
+  <section >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 text-center text-lg-start">
   <center>
+    
 
-<h3 style="font-size: 30px;">Processus de vote</h3>
+<h3 style="font-size: 30px;color:#000; text-align:center;">Processus de vote</h3>
 <div class="card" style="width: 18rem; height: 18rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">1. Le candidat saisir son matricule 
@@ -54,11 +61,11 @@ son nom et sa date de naissance
     <li class="list-group-item">3. Cliquer sur le bouton de validation <strong style="color: #fb7e11;">"Validez"</strong></li>
   </ul>
 </div>
-      <p class="col-lg-10 fs-4"></p>
+</center>
     </div>
-  </center>
-        <div class="col-md-10 mx-auto col-lg-5">
-       
+  
+        <div class="col-lg-7 mt-3">
+        <h2 style="color:#000; text-align:center;";>  Connectez-vous pour voter</h2> 
        <?php
 if (isset($_SESSION['message'])) {
   $isSuccess = strpos($_SESSION['message'], 'Merci') !== false; // Vérifie si "Merci" est dans le message
@@ -67,12 +74,7 @@ if (isset($_SESSION['message'])) {
 }
 ?>
 
-<div class="col-lg-7 text-center text-lg-start">
-<h1 class="animated-text display-4 fw-bold lh-1 text-body-emphasis mb-3">
-  Connectez-vous pour voter
-</h1>
-          <p class="col-lg-10 fs-4"></p>
-        </div>
+ 
 
           <form action="index-v.php" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
 
@@ -80,11 +82,19 @@ if (isset($_SESSION['message'])) {
               <input type="text" class="form-control" id="id" name="id" placeholder="Entrer votre matricule" required>
               <label for="id">Entrez votre matricule</label>
             </div>
+
      <div class="checkbox mb-3"></div>
-                <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="MDP" name="MDP" placeholder="Entrer votre matricule" required>
-              <label for="id">Entrez votre mot de passe</label>
-            </div>
+ <!-- Password -->
+     <div class="input-group mb-3">
+  <div class="form-floating">
+    <input type="password" class="form-control" id="MDP" name="MDP" placeholder="Entrez votre mot de passe" required>
+    <label for="MDP">Entrez votre mot de passe</label>
+  </div>
+  <button type="button" id="togglePassword" class="btn btn-outline-secondary">
+    <i class="bi bi-eye"></i> 
+  </button>
+</div>
+
             <div class="checkbox mb-3">
            
             </div>
@@ -95,7 +105,7 @@ if (isset($_SESSION['message'])) {
         </div>
       </div>
     </div>
-  </div>
+  </section>
   
   
 
@@ -114,17 +124,17 @@ if (isset($_SESSION['message'])) {
 
 <center>
 
-  <h3 id="gsap-text" class="animated-text1"><span style="color : #fb7e11;">ESMA,</span> L'école qui professionnalise votre talent</h3>
+  <h3 id="gsap-text" class="animated-text1" style="color : #000;"><span style="color : #fb7e11;">ESMA,</span> L'école qui professionnalise votre talent</h3>
   
-  <svg id="star1" viewBox="0 0 24 24" fill="#fb7e11">
+  <svg id="star1" viewBox="0 0 24 24" fill="#000">
           <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
       </svg>
       
-      <svg id="star2" viewBox="0 0 24 24" fill="#fb7e11">
+      <svg id="star2" viewBox="0 0 24 24" fill="#000">
           <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
       </svg>
       
-      <svg id="star3" viewBox="0 0 24 24" fill="#fb7e11">
+      <svg id="star3" viewBox="0 0 24 24" fill="#000">
           <polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" />
       </svg>
 
@@ -136,7 +146,7 @@ if (isset($_SESSION['message'])) {
 
 
 <center>
-  <footer> © 2025 BDE-ESMA | DEV-WEB-&-MOBILE-3 | Tous droits réservés.</footer>
+  <footer style="color:#000;""> © 2025 BDE-ESMA | DEV-WEB-&-MOBILE-3 | Tous droits réservés.</footer>
 </center>
 
 
@@ -144,5 +154,7 @@ if (isset($_SESSION['message'])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script3.js"></script>
 <script src="script4.js" ></script>
+<script src="script6.js"></script>
+
 </body>
 </html>
