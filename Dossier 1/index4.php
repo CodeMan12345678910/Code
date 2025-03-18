@@ -1,7 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION); // Debugging
-
 if (!isset($_SESSION['identifiant']) || empty($_SESSION['identifiant'])) {
     $_SESSION['message'] = "Veuillez vous connecter avant de voter.";
     header("Location: index3.php");

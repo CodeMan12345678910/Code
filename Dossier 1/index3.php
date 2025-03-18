@@ -41,12 +41,22 @@ session_start();
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
       <div class="row align-items-center g-lg-5 py-5">
         <div class="col-lg-7 text-center text-lg-start">
-          <h1 class="animated-text display-4 fw-bold lh-1 text-body-emphasis mb-3">
-            Connectez-vous pour voter
-          </h1>
-          <p class="col-lg-10 fs-4"></p>
-        </div>
-        
+  <center>
+
+<h3 style="font-size: 30px;">Processus de vote</h3>
+<div class="card" style="width: 18rem; height: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">1. Le candidat saisir son matricule 
+<strong style="color: #fb7e11;">par exemple : ( 25SMR-1034)</strong></li>
+    <li class="list-group-item">2. Son mot de passe est composé de 
+son nom et sa date de naissance   
+<strong style="color: #fb7e11;">par exemple : (KONE25/12/2003)</strong></li>
+    <li class="list-group-item">3. Cliquer sur le bouton de validation <strong style="color: #fb7e11;">"Validez"</strong></li>
+  </ul>
+</div>
+      <p class="col-lg-10 fs-4"></p>
+    </div>
+  </center>
         <div class="col-md-10 mx-auto col-lg-5">
        
        <?php
@@ -56,9 +66,14 @@ if (isset($_SESSION['message'])) {
   unset($_SESSION['message']);
 }
 ?>
+
+<div class="col-lg-7 text-center text-lg-start">
 <h1 class="animated-text display-4 fw-bold lh-1 text-body-emphasis mb-3">
   Connectez-vous pour voter
 </h1>
+          <p class="col-lg-10 fs-4"></p>
+        </div>
+
           <form action="index-v.php" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
 
             <div class="form-floating mb-3">
