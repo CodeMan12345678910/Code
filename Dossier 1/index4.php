@@ -6,11 +6,6 @@ if (!isset($_SESSION['identifiant']) || empty($_SESSION['identifiant'])) {
     exit();
 }
 
-if (isset($_SESSION['identifiant']) || !empty($_SESSION['identifiant'])) {
-    $_SESSION['message'] = "Vous avez déjà voté.";
-    header("Location: index-4.php");
-    exit();
-}
 
 
 
@@ -32,7 +27,7 @@ $result = $stmt_check_vote->fetch(PDO::FETCH_ASSOC);
 
 if ($result && $result['nombre_votes'] > 0) {
     $_SESSION['message'] = "Vous avez déjà voté pour " . htmlspecialchars($result['candidat']) . ". Vous ne pouvez plus voter.";
-    header("Location: index3.php");
+    header("Location: index-4.php");
     exit();
 }
 ?>
