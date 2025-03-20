@@ -107,6 +107,8 @@ foreach ($votes as $vote) {
     </div>
 
 
+
+
     <center>
 
         <header class="header">
@@ -119,6 +121,40 @@ foreach ($votes as $vote) {
         </header>
 
     </center>
+
+
+
+
+
+
+     <div class="container mt-5">
+
+    <div class="row align-items-md-stretch">
+      <div class="col-sm-12 mt-5 g-3">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>Première information</h2>
+          <p>Bonjour tous les étudiants de ESMA, pour des raisons de sécurité et pour éviter la tricherie, le site sera fermé jusqu'à demain 9h.</p>
+
+        </div>
+      </div>
+      <div class="col-sm-12 mt-5 g-3">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+          <h2>Deuxième information</h2>
+          <p> Il est important de rappeler que seuls les étudiants de ESMA, ESCA, ISAA RIVIERA seront admissibles au vote.</p>
+        </div>
+      </div>
+    </div>
+
+            <center>
+              <h3 style="font-size:30px; color: #000; margin-top: 15px;">Bonne chance à tous les candidats !</h3>
+            </center>
+     
+            <center> 
+              Deuxiéme journée de vote prévu dans 
+                <h2 id="countdown" class="fw-bold text-danger" style="font-size:30px margin-top: 15px;"></h2>
+            </center>
+        </div>
+    </div>
 
 
 
@@ -216,6 +252,7 @@ foreach ($votes as $vote) {
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
     <script src="scriptdef.js"></script>
     <script src="script4.js"></script>
     <script src="script5.js"></script>
