@@ -1,25 +1,32 @@
-const observer = new IntersectionObserver((entries) => {
+function startCountdown() {
+  const now = new Date();
+  const targetTime = new Date();
+  targetTime.setHours(11, 0, 0, 0); // 10h00:00 locale
 
-  entries.forEach((entry) => {
+  // Si l'heure actuelle est déjà passée 10h, définir le lendemain
+  if (targetTime <= now) {
+    targetTime.setDate(targetTime.getDate() + 1);
+  }
 
-console.log(entry)
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetTime - now;
 
-if (entry.isIntersecting) {
+    if (diff <= 0) {
+      clearInterval(interval);
+      document.getElementById('countdown').innerText = '00h 00m 00s';
+      return;
+    }
 
-entry.target.classList.add('show');
+    const hours = Math.floor((diff / (1000 * 60 * 60)));
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
- } else 
+    document.getElementById('countdown').innerText = `${hours}h ${minutes}m ${seconds}s`;
+  }
 
-{
-  entry.target.classList.remove('show');
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
 }
 
-  });
-});
-
-
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
-
-
-
+startCountdown();

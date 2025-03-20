@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,16 +5,32 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion - Vote</title>
+  <title>ESMA | VOTE</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="shortcut icon" type="x-icon" href="logo.jpg">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="style.css">
-</head>
-<style>
 
-</style>
+<script>
+  document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+  });
+  
+  document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.shiftKey && event.key === 'I')) {
+          event.preventDefault();
+      }
+  });
+
+
+</script>
+
+
+
+</head>
+
 
 <body> 
 
@@ -30,87 +43,111 @@ session_start();
     </div>
   </div>
 
-
-
-
-    <!-- Contenu principal -->
-    <!--<div id="content-1">-->
         <header class="header py-4">
             <img src="logo.jpg" alt="Logo-Esma" style="width: 100px;">
-            <h3 style="text-align: center;" id="gsap-text" class="animated-text">Bienvenue sur 
-              la plateforme officielle de vote des étudiants </h3>
+<center>
+  <h3 id="gsap-text" class="animated-text">Le site est temporairement fermé </h3>
+</center>
             
         </header>
- 
-  <!-- Contenu principal -->
-  <section >
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 text-center text-lg-start">
-  <center>
-    
 
-<h3 style="font-size: 30px;color:#000; text-align:center;">Processus de vote</h3>
-<div class="card" style="width: 18rem; height: 18rem;">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">1. Le candidat saisir son matricule 
-<strong style="color: #fb7e11;">par exemple : ( 25SMR-1034)</strong></li>
-    <li class="list-group-item">2. Son mot de passe est composé de 
-son nom et sa date de naissance   
-<strong style="color: #fb7e11;">par exemple : (KONE25/12/2003)</strong></li>
-    <li class="list-group-item">3. Cliquer sur le bouton de validation <strong style="color: #fb7e11;">"Validez"</strong></li>
-  </ul>
-</div>
-</center>
-    </div>
-  
-        <div class="col-lg-7 mt-3">
-        <h2 style="color:#000; text-align:center;";>  Connectez-vous pour voter</h2> 
-       <?php
-if (isset($_SESSION['message'])) {
-  $isSuccess = strpos($_SESSION['message'], 'Merci') !== false; // Vérifie si "Merci" est dans le message
-  echo '<div class="message ' . ($isSuccess ? 'success' : 'error') . '">' . $_SESSION['message'] . '</div>';
-  unset($_SESSION['message']);
-}
-?>
 
- 
+     <div class="container mt-5">
 
-          <form action="index-v.php" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+    <div class="row align-items-md-stretch">
+      <div class="col-sm-12 mt-5 g-3">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>Première information</h2>
+          <p>Bonjour tous les étudiants de ESMA, pour des raisons de sécurité et pour éviter la tricherie, le site sera fermé jusqu'à demain 10h.</p>
 
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="id" name="id" placeholder="Entrer votre matricule" required>
-              <label for="id">Entrez votre matricule</label>
-            </div>
-
-     <div class="checkbox mb-3"></div>
- <!-- Password -->
-     <div class="input-group mb-3">
-  <div class="form-floating">
-    <input type="password" class="form-control" id="MDP" name="MDP" placeholder="Entrez votre mot de passe" required>
-    <label for="MDP">Entrez votre mot de passe</label>
-  </div>
-  <button type="button" id="togglePassword" class="btn btn-outline-secondary">
-    <i class="bi bi-eye"></i> 
-  </button>
-</div>
-
-            <div class="checkbox mb-3">
-           
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Validez</button>
-            <hr class="my-4">
-            <small class="text-body-secondary">Contactez l'administration en cas de problème de connexion</small>
-          </form>
+        </div>
+      </div>
+      <div class="col-sm-12 mt-5 g-3">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+          <h2>Deuxième information</h2>
+          <p> Il est important de rappeler que seuls les étudiants de ESMA, ESCA, ISAA RIVIERA seront admissibles au vote.</p>
         </div>
       </div>
     </div>
-  </section>
-  
-  
 
-  
-  
+            <center>
+              <h3 style="font-size:30px; color: #000; margin-top: 15px;">Bonne chance à tous les candidats !</h3>
+            </center>
+     
+            <center> 
+              Vote prévu dans
+                <h2 id="countdown" class="fw-bold text-danger" style="font-size:30px margin-top: 15px;"></h2>
+            </center>
+        </div>
+    </div>
+
+
+
+
+
+<div class="container mt-5">
+  <center>
+<h3 style="font-size: 30px;color:#000;">Processus de vote</h3>
+<div class="card" style="width: 20rem; height: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" style="font-size:18px;">1. Le candidat saisit son matricule pour s'identifier
+<strong style="color: #fb7e11;">par exemple : ( 25SMR-1034)</strong></li>
+    <li class="list-group-item" style="font-size:18px;">2. Son mot de passe est composé de 
+son nom et sa date de naissance   
+<strong style="color: #fb7e11;">par exemple : (KONE25/12/2003)</strong></li>
+    <li class="list-group-item" style="font-size:18px;">3. Cliquer sur le bouton de validation <strong style="color: #fb7e11;">"Validez"</strong></li>
+  </ul>
+</div>
+</center>
+
+</div>
+
+
+
+<center>
+  <h3 style="font-size: 30px;color:#000; margin-top: 20px;">Présentation des candidats</h3>
+</center>
+
+        <div class="container mt-4">
+            <h2 class="text-center" id="typed-text"></h2>
+            <div class="row justify-content-center">
+                <form  class="d-flex flex-wrap justify-content-center">
+                 
+              <div class="card m-3" style="width: 18rem;">
+                <img src="Candidat 1.jpg" class="card-img-top" alt="Candidat 3">
+                <div class="card-body text-center">
+                  <h5 class="card-title">SAFFO JEAN MARTIAL TANO </h5>
+                  <p class="card-text">Communication visuelle 2</p>
+                  
+                </div>
+              </div>
+        
+        
+              <div class="card m-3" style="width: 18rem;">
+                <img src="Candidat 2.jpg" class="card-img-top" alt="Candidat 2" data-aos="fade-right">
+                <div class="card-body text-center">
+                  <h5 class="card-title">KRA KONAN JOSEPH EMMANUEL</h5>
+                  <p class="card-text">Journalisme plurimédia 2</p>
+                  
+                </div>
+              </div>
+        
+              <div class="card m-3" style="width: 18rem;">
+                <img src="Candidat 3.jpg" class="card-img-top" alt="Candidat 1">
+                <div class="card-body text-center">
+                  <h5 class="card-title">AMOUAN N'DORY PIERRE SAMUEL</h5>
+                  <p class="card-text">Communication visuelle 1</p>
+                  
+                </div>
+              </div>
+        
+            </form>
+          </div>
+        </div>
+
+
+
+ 
   <script>
     // Attendre 3 secondes avant d'afficher le contenu
     window.onload = function () {
@@ -152,9 +189,7 @@ if (isset($_SESSION['message'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script3.js"></script>
-<script src="script4.js" ></script>
-<script src="script6.js"></script>
-
+<script src="script.js"></script>
+<script src="script4.js"></script>
 </body>
 </html>
