@@ -1,7 +1,7 @@
 function startCountdown() {
   const now = new Date();
   const targetTime = new Date();
-  targetTime.setHours(9, 0, 0, 0); // 10h00:00 locale
+  targetTime.setHours(10, 20, 0, 0); // 10h00:00 locale
 
   // Si l'heure actuelle est déjà passée 10h, définir le lendemain
   if (targetTime <= now) {

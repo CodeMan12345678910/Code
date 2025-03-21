@@ -133,7 +133,7 @@ foreach ($votes as $vote) {
       <div class="col-sm-12 mt-5 g-3">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Première information</h2>
-          <p>Bonjour tous les étudiants de ESMA, pour des raisons de sécurité et pour éviter la tricherie, le site sera fermé jusqu'à demain 9h.</p>
+          <p>Bonjour tous les étudiants de ESMA, pour des raisons de sécurité et pour éviter la tricherie, le site sera fermé jusqu'à demain 10h30.</p>
 
         </div>
       </div>
