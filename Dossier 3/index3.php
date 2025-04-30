@@ -127,6 +127,8 @@ if (isset($_SESSION['message'])) {
             <hr class="my-4">
             <small class="text-body-secondary">Contactez l'administration en cas de problème de connexion</small>
           </form>
+
+          
         </div>
       </div>
     </div>
